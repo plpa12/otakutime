@@ -9,7 +9,7 @@ const read = <T,>(key: string, fallback: T): T => { try { const v = localStorage
 export default function App() {
   const [page, setPage] = useState("Início");
   const [kind, setKind] = useState<Kind>("Mangá");
-  const [works, setWorks] = useState<Work[]>(() => read("otakutime:works", emptyWorks));
+  const [works] = useState<Work[]>(() => read("otakutime:works", emptyWorks));
   const [library, setLibrary] = useState<Record<string, { status: string; progress: number }>>(() => read("otakutime:library", {}));
   const [reviews, setReviews] = useState<Review[]>(() => read("otakutime:reviews", []));
   const [query, setQuery] = useState("");
